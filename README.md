@@ -1,17 +1,22 @@
-# Quartz v5
+# Guia Teórico de Software Engineering
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Guia de estudo, em português, para quem quer se formar como software engineer por conta própria. Em vez de resumir livros, explica **por que** cada ideia existe, **como ler** cada livro e **em que ordem**, apontando para fontes públicas e legais.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+Cobre sete livros-base em três áreas:
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+- **System Design:** Designing Data-Intensive Applications (Kleppmann) · System Design Interview (Alex Xu)
+- **Arquitetura:** Clean Architecture (Martin) · Domain-Driven Design (Evans) · Fundamentals of Software Architecture (Richards & Ford)
+- **IA:** Deep Learning (Goodfellow, Bengio, Courville) · Designing Machine Learning Systems (Huyen)
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## Dois jeitos de ler
 
-## Sponsors
+- **Site:** https://ogatalars.github.io/guia_software_engineering_teorico/ (busca, grafo de notas, dark mode)
+- **Aqui no GitHub:** comece por [`content/pt-br/index.md`](content/pt-br/index.md). Todo o conteúdo é markdown puro e renderiza no próprio repositório.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Status
+
+Em construção. A estrutura e o glossário estão prontos; os guias por livro estão sendo escritos. Veja [`CONTRIBUTING.md`](CONTRIBUTING.md) para rodar localmente e [`STYLE.md`](STYLE.md) para o padrão das páginas.
+
+## Licença
+
+Conteúdo em `content/`: [CC BY-SA 4.0](LICENSE-CONTENT). Código (Quartz e scripts): [MIT](LICENSE.txt). O site é gerado com [Quartz](https://quartz.jzhao.xyz).

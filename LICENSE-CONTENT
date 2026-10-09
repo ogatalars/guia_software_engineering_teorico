@@ -1,0 +1,12 @@
+O conteúdo deste repositório dentro da pasta `content/` está licenciado sob
+Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0).
+
+Você pode copiar, redistribuir, adaptar e construir sobre o material, para
+qualquer fim, inclusive comercial, desde que dê o crédito apropriado e
+distribua suas contribuições sob a mesma licença.
+
+Texto completo da licença: https://creativecommons.org/licenses/by-sa/4.0/legalcode.pt
+Resumo legível: https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR
+
+O código do gerador de site (pasta `quartz/` e arquivos de configuração) é do
+projeto Quartz e segue a licença MIT em LICENSE.txt.
