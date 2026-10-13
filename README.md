@@ -15,7 +15,7 @@ Cobre sete livros-base em três áreas:
 
 ## Status
 
-Em construção. A estrutura e o glossário estão prontos; os guias por livro estão sendo escritos. Veja [`CONTRIBUTING.md`](CONTRIBUTING.md) para rodar localmente e [`STYLE.md`](STYLE.md) para o padrão das páginas.
+Os guias dos sete livros estão completos: 64 páginas de capítulo, cada uma com o essencial do livro explicado sem jargão. Em andamento: as trilhas de estudo, a página "Como estudar" e a versão em inglês. Veja [`CONTRIBUTING.md`](CONTRIBUTING.md) para rodar localmente e [`STYLE.md`](STYLE.md) para o padrão das páginas.
 
 ## Licença
 
