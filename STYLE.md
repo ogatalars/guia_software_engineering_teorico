@@ -29,7 +29,7 @@ O conteúdo precisa renderizar igual no site e navegando o repositório no GitHu
 
 ## 3. Template de página de capítulo/parte
 
-Todas as seções, nesta ordem. Seção vazia não é permitida; se não há o que dizer, a página não deveria existir. Alvo: 800–1.500 palavras.
+Todas as seções, nesta ordem. Seção vazia não é permitida; se não há o que dizer, a página não deveria existir. Alvo: 1.200–2.000 palavras. O leitor pode nunca abrir o livro: "As ideias centrais" precisa entregar o conteúdo, não só apontar para ele.
 
 ```markdown
 ---
@@ -107,5 +107,5 @@ Um termo = uma entrada `## termo` com definição em até 3 frases + link para a
 - [ ] Pelo menos 1 Mermaid que renderiza no preview do GitHub.
 - [ ] Nenhum trecho com mais de 2 frases literais de livro; nenhuma figura de livro.
 - [ ] "Para ir além" usa só links do `fontes.md` do livro ou fontes oficiais.
-- [ ] 800–1.500 palavras.
+- [ ] 1.200–2.000 palavras.
 - [ ] Links anterior/próximo/index funcionam.
