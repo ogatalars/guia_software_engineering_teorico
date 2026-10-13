@@ -11,11 +11,11 @@ Cobre sete livros-base em três áreas:
 ## Dois jeitos de ler
 
 - **Site:** https://ogatalars.github.io/guia_software_engineering_teorico/ (busca, grafo de notas, dark mode)
-- **Aqui no GitHub:** comece por [`content/pt-br/index.md`](content/pt-br/index.md). Todo o conteúdo é markdown puro e renderiza no próprio repositório.
+- **Aqui no GitHub:** comece por [`content/pt-br/fundamentos/index.md`](content/pt-br/fundamentos/index.md). Todo o conteúdo é markdown puro e renderiza no próprio repositório.
 
 ## Status
 
-Os guias dos sete livros estão completos: 64 páginas de capítulo, cada uma com o essencial do livro explicado sem jargão. Em andamento: as trilhas de estudo, a página "Como estudar" e a versão em inglês. Veja [`CONTRIBUTING.md`](CONTRIBUTING.md) para rodar localmente e [`STYLE.md`](STYLE.md) para o padrão das páginas.
+Completo em português: o guia principal [Fundamentos de Software Engineering](content/pt-br/fundamentos/index.md), em 11 módulos, e os guias de leitura dos sete livros. Em andamento: versão em inglês.
 
 ## Licença
 

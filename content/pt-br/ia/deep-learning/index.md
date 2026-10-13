@@ -16,7 +16,7 @@ tags: [deep-learning, ia, guia-de-leitura]
 
 Para quem já programa, quer entender o que acontece *dentro* de uma rede neural e aceita encarar um pouco de matemática. É o livro certo quando "chamar `model.fit()`" deixou de bastar: a loss não cai, aparece `NaN`, o modelo decora o treino, e você quer saber por quê.
 
-A matemática pode estar enferrujada: os capítulos 2 a 4 revisam o necessário, e este guia explica cada fórmula em palavras antes de usá-la. Se você ainda não sabe o que é treino, validação e teste, ou nunca viu um modelo em produção, a [trilha de ML em produção](../../trilhas/index.md) diz o que ler antes.
+A matemática pode estar enferrujada: os capítulos 2 a 4 revisam o necessário, e este guia explica cada fórmula em palavras antes de usá-la. Se você ainda não sabe o que é treino, validação e teste, ou nunca viu um modelo em produção, o módulo [10. Como uma máquina aprende](../../fundamentos/10-como-uma-maquina-aprende.md) do guia principal cobre esse básico.
 
 ## O que o livro NÃO é
 

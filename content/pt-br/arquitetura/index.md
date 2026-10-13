@@ -14,4 +14,4 @@ Arquitetura é o conjunto de decisões que são caras de mudar depois: onde fica
 - **[Domain-Driven Design](ddd/index.md)** (Eric Evans) — o conteúdo do centro: como modelar o domínio do negócio em código e como dividir um sistema grande em contextos.
 - **[Fundamentals of Software Architecture](fundamentals-software-architecture/index.md)** (Mark Richards & Neal Ford) — o mapa: características arquiteturais, estilos (monolito, microsserviços, event-driven) e como registrar decisões.
 
-Ordem sugerida: Clean Architecture → DDD → Fundamentals. É o começo da [trilha de fundamentos de backend](../trilhas/index.md).
+Ordem sugerida: Clean Architecture → DDD → Fundamentals. No guia principal, esta área corresponde aos módulos 1 a 4 de [Fundamentos de Software Engineering](../fundamentos/index.md).

@@ -1,47 +1,37 @@
 ---
 title: "Guia Teórico de Software Engineering"
-description: "O que é este guia, para quem é, as três áreas, as trilhas de estudo e como usar o site ou o repositório."
+description: "Um guia aberto, em português, para quem quer se formar como software engineer por conta própria: um percurso único de fundamentos e guias de leitura de sete livros-base."
 tags: [inicio]
 ---
 
 # Guia Teórico de Software Engineering
 
-> [!NOTE] Em uma frase
-> Um mapa de leitura comentado dos livros que formam a base de um software engineer hoje, escrito para quem estuda sozinho e não quer pular etapas.
+> [!IMPORTANT] Comece por aqui
+> **[Fundamentos de Software Engineering](fundamentos/index.md)** é um percurso único em 11 módulos, do código bem organizado até machine learning em produção. Foi escrito para ser lido do começo ao fim, sem precisar de nenhum livro.
 
 ## Para quem é
 
-Para quem já programa, mesmo que pouco, e sente que falta a teoria por trás: por que sistemas caem quando crescem, por que código vira bagunça, o que de fato acontece quando se "treina um modelo". Não assumimos que você leu nenhum dos livros. Cada termo técnico é definido na primeira vez em que aparece e reunido no [glossário](glossario.md).
+Para quem já programa, mesmo que pouco, e sente que falta a teoria por trás: por que sistemas caem quando crescem, por que código vira bagunça, o que de fato acontece quando se "treina um modelo". Cada termo técnico é definido na primeira vez em que aparece e reunido no [glossário](glossario.md).
 
-## O que este guia faz e o que não faz
-
-Este guia **explica e orienta**. Para cada livro ele diz o que o livro ensina, por que isso importa, como ler, o que levar de cada capítulo e onde errar é comum. Ele **não substitui o livro**: não reproduz texto, figuras nem exercícios. Para cada livro há uma página de [fontes públicas](referencias/fontes-completas.md), verificadas uma a uma, com resumos de terceiros, material oficial gratuito e artigos que aprofundam.
-
-## Como estudar
-
-Comece por [Como estudar](como-estudar.md): o método para ler livro técnico sem travar, quanto tempo reservar e como usar as perguntas de verificação. Depois escolha uma [trilha](trilhas/index.md).
-
-## As três áreas
+## O que tem aqui
 
 ```mermaid
 flowchart LR
-  A[Arquitetura de Software] --> SD[System Design]
-  SD --> IA[IA em produção]
-  A -.-> IA
+  F["Fundamentos de Software Engineering"] -->|"quer ir mais fundo?"| L["Guias por livro"]
+  L --> S["Fontes públicas verificadas"]
 ```
 
-### [System Design](system-design/index.md)
-Como construir sistemas que aguentam escala, falhas e mudança. Dois livros: *Designing Data-Intensive Applications* (o fundamento) e *System Design Interview* (a prática de projetar).
+**1. [Fundamentos de Software Engineering](fundamentos/index.md).** O guia principal. Onze módulos em três partes: código e arquitetura, dados e escala, inteligência artificial. Cada módulo se sustenta sozinho e termina indicando onde aprofundar.
 
-### [Arquitetura de Software](arquitetura/index.md)
-Como organizar código e decisões para que o sistema continue mudável por anos. Três livros: *Clean Architecture*, *Domain-Driven Design* e *Fundamentals of Software Architecture*.
+**2. Guias por livro.** Para quem quer ir além de um módulo, há um guia de leitura de cada livro, com o essencial de cada capítulo explicado sem jargão. Nenhum é obrigatório.
 
-### [Inteligência Artificial](ia/index.md)
-O que há por baixo de um modelo e o que é preciso para colocá-lo em produção. Dois livros: *Deep Learning* e *Designing Machine Learning Systems*.
+| Área | Livros |
+|---|---|
+| [Arquitetura de Software](arquitetura/index.md) | [Clean Architecture](arquitetura/clean-architecture/index.md) · [Domain-Driven Design](arquitetura/ddd/index.md) · [Fundamentals of Software Architecture](arquitetura/fundamentals-software-architecture/index.md) |
+| [System Design](system-design/index.md) | [Designing Data-Intensive Applications](system-design/ddia/index.md) · [System Design Interview](system-design/system-design-interview/index.md) |
+| [Inteligência Artificial](ia/index.md) | [Deep Learning](ia/deep-learning/index.md) · [Designing Machine Learning Systems](ia/designing-ml-systems/index.md) |
 
-## Trilhas
-
-As [trilhas](trilhas/index.md) cruzam os livros em ordens pensadas para um objetivo: fundamentos de backend, sistemas distribuídos, ML em produção.
+**3. [Fontes públicas](referencias/fontes-completas.md).** Os links que sustentam o guia, cada um aberto e verificado: resumos de terceiros, material oficial gratuito e artigos que aprofundam.
 
 ## Dois jeitos de ler
 
@@ -49,4 +39,4 @@ No **site**, você tem busca, grafo de notas e modo escuro. No **GitHub**, cada 
 
 ## Licença
 
-Conteúdo sob CC BY-SA 4.0. Pode copiar e adaptar, citando a origem e mantendo a licença.
+Conteúdo sob CC BY-SA 4.0. Pode copiar e adaptar, citando a origem e mantendo a licença. Este guia explica e orienta; ele não substitui nem reproduz os livros.

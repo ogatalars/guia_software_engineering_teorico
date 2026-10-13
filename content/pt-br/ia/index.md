@@ -13,4 +13,4 @@ Dois lados da mesma moeda: o que um modelo é por dentro, e o que um sistema pre
 - **[Deep Learning](deep-learning/index.md)** (Goodfellow, Bengio, Courville) — a teoria. Álgebra linear, probabilidade e otimização aplicadas a redes neurais. Gratuito e oficial em deeplearningbook.org.
 - **[Designing Machine Learning Systems](designing-ml-systems/index.md)** (Chip Huyen) — a prática. Dados, features, deploy, monitoramento e a parte humana de manter ML em produção.
 
-Esta área assume que você já passou pelos fundamentos de backend; a [trilha de ML em produção](../trilhas/index.md) diz o que ler antes.
+No guia principal, esta área corresponde aos módulos [10. Como uma máquina aprende](../fundamentos/10-como-uma-maquina-aprende.md) e [11. ML em produção](../fundamentos/11-ml-em-producao.md). Os guias por livro são para quem quer ir mais fundo.
