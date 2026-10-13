@@ -35,9 +35,9 @@ A boa notícia é que um processo repetível resolve a maior parte disso. É o q
 
 ```mermaid
 flowchart LR
-    P1["1. Entender o problema e definir o escopo<br/>(3–10 min)"] --> P2["2. Propor o desenho de alto nível e obter acordo<br/>(10–15 min)"]
-    P2 --> P3["3. Aprofundar nos pontos difíceis<br/>(10–25 min)"]
-    P3 --> P4["4. Fechar: gargalos, falhas, próximos passos<br/>(3–5 min)"]
+    P1["1 · Entender o problema e definir o escopo<br/>(3–10 min)"] --> P2["2 · Propor o desenho de alto nível e obter acordo<br/>(10–15 min)"]
+    P2 --> P3["3 · Aprofundar nos pontos difíceis<br/>(10–25 min)"]
+    P3 --> P4["4 · Fechar: gargalos, falhas, próximos passos<br/>(3–5 min)"]
     P2 -. "entrevistador discorda" .-> P1
 ```
 

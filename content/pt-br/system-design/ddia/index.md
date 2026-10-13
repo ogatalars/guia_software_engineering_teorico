@@ -29,19 +29,19 @@ São três partes. A primeira olha para uma máquina só; a segunda espalha os d
 ```mermaid
 flowchart TD
     subgraph P1["Parte I: fundamentos (1–4)"]
-        C1["1. Confiável, escalável, sustentável"] --> C2["2. Modelos de dados"]
-        C2 --> C3["3. Armazenamento"]
-        C3 --> C4["4. Codificação e evolução"]
+        C1["1 · Confiável, escalável, sustentável"] --> C2["2 · Modelos de dados"]
+        C2 --> C3["3 · Armazenamento"]
+        C3 --> C4["4 · Codificação e evolução"]
     end
     subgraph P2["Parte II: dados distribuídos (5–9)"]
-        C5["5. Replicação"] --> C6["6. Particionamento"]
-        C6 --> C7["7. Transações"]
-        C7 --> C8["8. Problemas dos sistemas distribuídos"]
-        C8 --> C9["9. Consistência e consenso"]
+        C5["5 · Replicação"] --> C6["6 · Particionamento"]
+        C6 --> C7["7 · Transações"]
+        C7 --> C8["8 · Problemas dos sistemas distribuídos"]
+        C8 --> C9["9 · Consistência e consenso"]
     end
     subgraph P3["Parte III: dados derivados (10–12)"]
-        C10["10. Processamento em lote"] --> C11["11. Processamento de streams"]
-        C11 --> C12["12. O futuro dos sistemas de dados"]
+        C10["10 · Processamento em lote"] --> C11["11 · Processamento de streams"]
+        C11 --> C12["12 · O futuro dos sistemas de dados"]
     end
     C4 --> C5
     C3 --> C5

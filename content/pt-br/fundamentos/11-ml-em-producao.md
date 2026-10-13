@@ -15,7 +15,7 @@ A Lojinha quer recomendar produtos. "Quem comprou este tênis também levou...",
 
 Alguém do time baixa o histórico de pedidos, abre um notebook (um caderno interativo onde código e resultados ficam juntos), treina um modelo e mostra um número bonito: "acerta 92% das próximas compras". Três meses depois, a vitrine está no ar, o número de vendas não mexeu, o modelo recomenda casaco em dezembro (verão no Brasil) e ninguém sabe dizer desde quando. O modelo não deu erro nenhum. Ele continuou respondendo, com toda a confiança, coisas cada vez piores.
 
-Esse é o problema deste módulo. O [módulo 10](10-como-uma-maquina-aprende.md) explicou o que acontece dentro do treino. Aqui é o resto: de onde vêm os dados, como saber se o modelo presta antes de ligá-lo, como servi-lo, como perceber que ele envelheceu e quem cuida de tudo isso. É o último módulo do guia, e ele usa quase tudo o que veio antes.
+O [módulo 10](10-como-uma-maquina-aprende.md) explicou o que acontece dentro do treino. Este, o último do guia, trata do resto: dados, avaliação, deploy, envelhecimento e pessoas. Ele usa quase tudo o que veio antes.
 
 ## O que você precisa saber antes
 
@@ -33,7 +33,7 @@ Recomendação passa em todos: o gosto de cada cliente é complexo, a Lojinha te
 
 ### Comece sem ML
 
-Mesmo quando ML é a resposta, ele raramente é o **primeiro** passo. A sequência saudável tem fases:
+Mesmo quando ML é a resposta, ele raramente é o **primeiro** passo:
 
 1. **Heurística**: "mostre os 10 mais vendidos da categoria que a pessoa está vendo". Uma consulta SQL. Já vende alguma coisa e, principalmente, vira o **número a bater**.
 2. **O modelo mais simples possível**, de ponta a ponta no ar. O objetivo não é ser bom, é provar que o caminho dados → modelo → vitrine → medição funciona.
@@ -65,7 +65,7 @@ flowchart LR
     M -->|"modelo piorou: retreinar"| T
 ```
 
-Cada caixa tem os problemas dos módulos anteriores. Os dados vêm do banco transacional e de eventos (módulos [5](05-dados-por-dentro.md) e [8](08-movendo-dados-batch-e-streams.md)). O serviço de predição é um serviço como outro qualquer: tem API, precisa de [SLO](../glossario.md#slo) de latência, escala horizontalmente, cai ([módulo 7](07-sistemas-distribuidos-falham.md)). A seta de volta, das compras para os dados, fecha um ciclo que nenhum software comum tem.
+Cada caixa tem os problemas dos módulos anteriores. Os dados vêm do banco e de eventos (módulos [5](05-dados-por-dentro.md) e [8](08-movendo-dados-batch-e-streams.md)). O serviço de predição é um serviço como outro qualquer: tem API, [SLO](../glossario.md#slo) (meta de qualidade, como "99% das respostas em menos de 100 ms"), escala e cai ([módulo 7](07-sistemas-distribuidos-falham.md)). A seta de volta, das compras para os dados, fecha um ciclo que software comum não tem.
 
 E há uma diferença de fundo. Em software tradicional, o comportamento está no **código**. Em ML, o comportamento vem de **código mais dados**: o mesmo código, treinado com outro dataset, gera outro sistema. Consequências diretas:
 
@@ -79,13 +79,11 @@ E há uma diferença de fundo. Em software tradicional, o comportamento está no
 
 Para aprender a recomendar, o modelo precisa de exemplos com [label](../glossario.md#label): "mostramos o produto X ao cliente C; ele comprou?". Recomendação tem uma sorte: os labels são **naturais**, surgem do próprio uso. Mostrou, clicou, comprou: está rotulado, de graça.
 
-O tempo entre a previsão e a chegada do label se chama **ciclo de feedback**. Em recomendação, são minutos. Em fraude, o "isso foi fraude" pode levar meses, até o cliente contestar a fatura. Quanto mais curto o ciclo, mais rápido você descobre que o modelo errou e mais fácil é retreinar.
+O tempo entre a previsão e a chegada do label é o **ciclo de feedback**. Em recomendação, minutos; em fraude, meses, até o cliente contestar a fatura. Quanto mais curto, mais cedo você descobre que o modelo errou.
 
 Sem labels naturais, alguém rotula à mão: caro, lento e inconsistente. Guarde a **linhagem** de cada exemplo (de onde veio, quem rotulou, quando) para achar o lote ruim quando o modelo piorar.
 
 ### Labels que mentem
-
-O label natural tem armadilhas:
 
 - **Ausência de clique não é um "não"**. O cliente pode nem ter rolado a página até o produto. Tratar "não clicou" como "não gostou" ensina o modelo a desprezar tudo o que fica no rodapé.
 - **Posição engana**. O primeiro item da vitrine é clicado mais só por ser o primeiro. Registre em que posição cada item apareceu e use isso como feature.
@@ -118,7 +116,7 @@ Regra prática: uma feature que sozinha prevê quase tudo merece investigação 
 
 ### Train-serving skew
 
-Um parente do vazamento: a feature é calculada de um jeito no treino (uma consulta SQL no data warehouse, sobre o histórico) e de outro em produção (um código Python no serviço, sobre o evento que acabou de chegar). Uma diferença boba, como fuso horário ou arredondamento, e o modelo recebe entradas que nunca viu. Isso é o [train-serving skew](../glossario.md#train-serving-skew). A defesa é ter **uma definição só** de cada feature, usada nos dois lados. É para isso que existem as **feature stores**, sistemas que guardam a definição e os valores das features e os servem igual para treino e produção.
+Parente do vazamento: a feature é calculada com SQL no treino e com Python no serviço em produção. Uma diferença boba, como fuso horário, e o modelo recebe entradas que nunca viu. Isso é o [train-serving skew](../glossario.md#train-serving-skew). A defesa é **uma definição só** de cada feature, usada nos dois lados; é para isso que existem as **feature stores**, sistemas que guardam e servem features igual para treino e produção.
 
 ## Avaliação offline além da acurácia
 
@@ -131,7 +129,7 @@ Para classes raras, troque acurácia por duas perguntas:
 - **Precisão**: das recomendações que fiz, quantas viraram compra?
 - **Recall**: das compras que aconteceram, quantas eu tinha recomendado?
 
-Em ranking, como uma vitrine, o que importa é se os itens certos estão **no topo**, então métricas do tipo "dos 10 primeiros, quantos eram bons?" dizem mais que qualquer acurácia.
+Numa vitrine, o que importa é o **topo**: "dos 10 primeiros, quantos eram bons?" diz mais que qualquer acurácia.
 
 ### Testes de comportamento
 
@@ -151,7 +149,7 @@ E registre cada experimento: versão do código, dos dados, hiperparâmetros e m
 
 A decisão central é **quando** a previsão é feita.
 
-- **Predição em batch**: toda noite, um job calcula as recomendações de todos os clientes e grava numa tabela. A vitrine só lê a linha pronta. Latência de leitura mínima, hardware bem aproveitado. Mas a recomendação é de ontem: o cliente que acabou de olhar dez fones de ouvido continua vendo sugestões de panela. E você gasta computação com quem nem vai aparecer.
+- **Predição em batch**: toda noite, um job calcula as recomendações de todos os clientes e grava numa tabela. A vitrine só lê a linha pronta: rápido e barato. Mas a recomendação é de ontem: quem acabou de olhar dez fones continua vendo panelas. E você calcula para quem nem vai aparecer.
 - **Predição online**: a previsão é calculada na hora do pedido, com o contexto atual. Reage ao que a pessoa acabou de fazer, mas o modelo e as features precisam responder dentro do SLO de latência, porque a página espera por ele.
 
 ```mermaid
@@ -201,7 +199,7 @@ Se os labels chegassem na hora, bastaria medir o acerto. Mas eles atrasam, entã
 | Previsões | o modelo recomendava 300 produtos distintos por dia, agora recomenda 12 | Muda antes da acurácia |
 | Features | "preço médio" com 40% de nulos desde ontem | Pega pipeline quebrado cedo |
 
-Para comparar distribuições, comece com estatísticas simples (média, mínimo, máximo, taxa de nulos) de treino contra produção. Testes estatísticos ajudam, mas cuidado: com muitos dados, qualquer diferença minúscula sai "significativa". E olhe a janela certa: queda toda segunda de manhã pode ser só o ritmo da semana.
+Compare treino e produção com estatísticas simples (média, mínimo, máximo, taxa de nulos). Testes estatísticos ajudam, mas com muitos dados qualquer diferença minúscula sai "significativa". E escolha a janela certa: queda toda segunda de manhã pode ser só o ritmo da semana.
 
 Cada alerta precisa de condição clara, dono e ação definida, ou vira ruído e as pessoas param de olhar (a **fadiga de alerta**). É a [observabilidade](../glossario.md#observabilidade) que você já conhece de sistemas, com camadas a mais.
 
@@ -227,8 +225,8 @@ flowchart LR
     AB -->|"não ganhou"| V
 ```
 
-- **Shadow** (sombra): o desafiante recebe as mesmas requisições que o campeão, mas suas respostas só são gravadas, nunca mostradas. Pega erros, latência ruim e saídas absurdas sem risco. Não mede reação do cliente e dobra o custo de inferência.
-- **Canary**: o desafiante atende uma fatia pequena do tráfego. Se as métricas operacionais e de negócio seguem bem, a fatia cresce. Se não, o estrago ficou contido em 1%.
+- **Shadow** (sombra): o desafiante recebe as mesmas requisições que o campeão, mas suas respostas só são gravadas, nunca mostradas. Pega erros e latência ruim sem risco, mas não mede a reação do cliente.
+- **Canary**: o desafiante atende uma fatia pequena do tráfego. Se tudo vai bem, a fatia cresce; se não, o estrago ficou em 1%.
 - **Teste A/B**: clientes sorteados ao acaso veem A ou B, e compara-se a métrica de negócio (compras, não cliques). O sorteio precisa ser aleatório de verdade e o teste precisa durar o bastante para a diferença não ser sorte.
 - **Bandits**: variação que manda mais tráfego, aos poucos, para o modelo que está indo melhor, sem esperar o fim do teste.
 
@@ -260,12 +258,12 @@ Práticas que viram rotina de engenharia, não filosofia:
 - **Desconfie do número bonito.** Acurácia altíssima na primeira tentativa costuma ser vazamento.
 - **Uma definição de feature só**, usada no treino e na produção.
 - **Todo modelo no ar precisa de plano B, monitoramento e um jeito de voltar à versão anterior.** Sem os três, não suba.
-- **Perguntas para fazer em revisão de projeto:** de onde vêm os labels e quanto demoram? O que acontece se o modelo cair? Como saberemos que ele piorou? Quem é acordado? Em qual grupo de clientes ele vai pior?
+- **Em revisão de projeto, pergunte:** de onde vêm os labels e quanto demoram? O que acontece se o modelo cair? Como saberemos que ele piorou? Em qual grupo ele vai pior?
 
 ## Armadilhas comuns
 
 - **"O modelo está pronto, é só subir."** O modelo é a menor parte. Dados, serviço, monitoramento e retreino são a maior.
-- **"Se não mexermos nele, continua igual."** Ele piora sozinho, porque o mundo muda. Modelo sem monitoramento é bomba-relógio silenciosa.
+- **"Se não mexermos nele, continua igual."** Ele piora sozinho, porque o mundo muda.
 - **"Não clicou, então não gostou."** Talvez nem tenha visto. Labels implícitos carregam viés de posição e exposição.
 - **"Ganhou offline, então ganha online."** A avaliação offline não vê a reação do cliente nem o ciclo de feedback. Só um teste com tráfego real confirma.
 - **"Alerta de drift, o mundo mudou."** Antes, confira o pipeline. Na maioria das vezes, foi uma coluna que quebrou.

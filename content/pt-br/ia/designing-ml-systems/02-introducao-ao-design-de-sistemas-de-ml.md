@@ -46,11 +46,11 @@ Desenvolver um sistema de ML não é uma sequência "coleta, treino, deploy, fim
 
 ```mermaid
 flowchart LR
-    A["1. Escopo do projeto"] --> B["2. Engenharia de dados"]
-    B --> C["3. Desenvolvimento do modelo"]
-    C --> D["4. Deploy"]
-    D --> E["5. Monitoramento e aprendizado contínuo"]
-    E --> F["6. Análise de negócio"]
+    A["1 · Escopo do projeto"] --> B["2 · Engenharia de dados"]
+    B --> C["3 · Desenvolvimento do modelo"]
+    C --> D["4 · Deploy"]
+    D --> E["5 · Monitoramento e aprendizado contínuo"]
+    E --> F["6 · Análise de negócio"]
     F --> A
     C -. "precisa de mais dados" .-> B
     E -. "modelo degradou" .-> C

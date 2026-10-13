@@ -27,8 +27,8 @@ Os três primeiros capítulos do volume 1 são a base: o vocabulário de escala,
 
 ```mermaid
 flowchart TB
-    M["1. Método de 4 passos"] --> E["2. Escalar de zero a milhões"]
-    E --> N["3. Estimativas"]
+    M["1 · Método de 4 passos"] --> E["2 · Escalar de zero a milhões"]
+    E --> N["3 · Estimativas"]
     N --> RL["P1. Rate limiter"]
     N --> CH["P2. Consistent hashing"]
     CH --> KV["P3. Key-value store"]

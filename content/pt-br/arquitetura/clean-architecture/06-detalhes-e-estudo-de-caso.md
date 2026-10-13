@@ -70,17 +70,17 @@ O capítulo 34, de Simon Brown, é o mais prático do livro. Ele parte de uma ob
 
 ```mermaid
 flowchart TB
-    subgraph L["1. Por camada"]
+    subgraph L["1 · Por camada"]
         L1["web"] --> L2["servico"] --> L3["dados"]
     end
-    subgraph F["2. Por funcionalidade"]
+    subgraph F["2 · Por funcionalidade"]
         F1["pedidos: controller + servico + repositorio"]
     end
-    subgraph P["3. Portas e adaptadores"]
+    subgraph P["3 · Portas e adaptadores"]
         P1["dominio (dentro)"]
         P2["infraestrutura (fora)"] --> P1
     end
-    subgraph C["4. Por componente"]
+    subgraph C["4 · Por componente"]
         C1["web"] --> C2["ComponentePedidos (servico + repositorio, só a interface pública)"]
     end
 ```

@@ -25,22 +25,20 @@ No fim de cada módulo há uma seção **"Quer ir mais fundo?"**. Ela aponta par
 
 ```mermaid
 flowchart TD
-  subgraph C["Parte 1 · Código e arquitetura"]
-    M1["1. Código que aguenta mudança"] --> M2["2. Fronteiras e dependências"]
-    M2 --> M3["3. Modelando o negócio"]
-    M3 --> M4["4. Decisões de arquitetura"]
+  subgraph C["Parte 1 · Código"]
+    M1["1 · Código que aguenta mudança"] --> M2["2 · Fronteiras e dependências"]
+    M2 --> M3["3 · Modelando o negócio"]
+    M3 --> M4["4 · Decisões de arquitetura"]
   end
-  subgraph D["Parte 2 · Dados e escala"]
-    M5["5. Dados por dentro"] --> M6["6. Quando uma máquina não basta"]
-    M6 --> M7["7. Sistemas distribuídos falham"]
-    M7 --> M8["8. Movendo dados: batch e streams"]
-    M8 --> M9["9. Projetando sistemas na prática"]
+  subgraph D["Parte 2 · Dados"]
+    M5["5 · Dados por dentro"] --> M6["6 · Quando uma máquina não basta"]
+    M6 --> M7["7 · Sistemas distribuídos falham"]
+    M7 --> M8["8 · Movendo dados: batch e streams"]
+    M8 --> M9["9 · Projetando sistemas na prática"]
   end
-  subgraph I["Parte 3 · Inteligência artificial"]
-    M10["10. Como uma máquina aprende"] --> M11["11. ML em produção"]
+  subgraph I["Parte 3 · IA"]
+    M10["10 · Como uma máquina aprende"] --> M11["11 · ML em produção"]
   end
-  M4 --> M5
-  M9 --> M10
 ```
 
 A ordem não é a única possível. Se você trabalha com dados, pode começar pela Parte 2. Se o seu interesse é IA, a Parte 3 funciona sozinha, mas o módulo 11 fica mais claro depois dos módulos 5 a 8.

@@ -27,9 +27,9 @@ O método vem do mundo das entrevistas de system design (a etapa em que pedem pa
 
 ```mermaid
 flowchart LR
-    P1["1. Escopo<br/>o que e em que tamanho"] --> P2["2. Alto nível<br/>rascunho de ponta a ponta"]
-    P2 --> P3["3. Aprofundar<br/>só onde é difícil"]
-    P3 --> P4["4. Fechar<br/>gargalos e trade-offs"]
+    P1["1 · Escopo<br/>o que e em que tamanho"] --> P2["2 · Alto nível<br/>rascunho de ponta a ponta"]
+    P2 --> P3["3 · Aprofundar<br/>só onde é difícil"]
+    P3 --> P4["4 · Fechar<br/>gargalos e trade-offs"]
     P2 -. "alguém discorda" .-> P1
 ```
 

@@ -44,9 +44,9 @@ A API (a interface que os clientes chamam) fica com dois endpoints: um `POST` qu
 flowchart LR
     U["Navegador"] -->|"GET /4c92"| LB["Balanceador de carga"]
     LB --> W["Servidores web (stateless)"]
-    W -->|"1. procura o código"| C["Cache"]
+    W -->|"1 · procura o código"| C["Cache"]
     C -->|"não achou"| DB[("Banco: código → URL longa")]
-    W -->|"2. responde 301 ou 302 com Location"| U
+    W -->|"2 · responde 301 ou 302 com Location"| U
 ```
 
 O caminho de leitura é o que importa: o navegador pede o código, um servidor [stateless](../../../glossario.md#stateless-e-stateful) (que não guarda nada entre requisições, então qualquer um atende) procura no cache e, se não achar, no banco. A resposta HTTP traz o cabeçalho `Location` com a URL longa, e o navegador vai para lá sozinho.

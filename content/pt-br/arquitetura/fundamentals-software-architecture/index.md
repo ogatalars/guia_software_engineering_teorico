@@ -26,14 +26,14 @@ O livro tem três partes. A Parte I (Fundamentos) define o que é arquitetura, m
 
 ```mermaid
 flowchart TD
-    P1["1. Pensamento arquitetural"] --> P2["2. Modularidade"]
-    P2 --> P3["3. Características arquiteturais"]
-    P3 --> P4["4. Estilos: visão geral"]
-    P4 --> P5["5. Monolitos"]
-    P4 --> P6["6. Arquiteturas distribuídas"]
-    P5 --> P7["7. Comparando estilos"]
+    P1["1 · Pensamento arquitetural"] --> P2["2 · Modularidade"]
+    P2 --> P3["3 · Características arquiteturais"]
+    P3 --> P4["4 · Estilos: visão geral"]
+    P4 --> P5["5 · Monolitos"]
+    P4 --> P6["6 · Arquiteturas distribuídas"]
+    P5 --> P7["7 · Comparando estilos"]
     P6 --> P7
-    P3 --> P8["8. Decisões, ADRs e risco"]
+    P3 --> P8["8 · Decisões, ADRs e risco"]
     P7 --> P8
 ```
 

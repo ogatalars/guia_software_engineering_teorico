@@ -27,16 +27,16 @@ Os capítulos seguem o ciclo de vida de um sistema de ML: decidir o que construi
 
 ```mermaid
 flowchart TD
-    C1["1. Visão geral"] --> C2["2. Design de sistemas de ML"]
-    C2 --> C3["3. Engenharia de dados"]
-    C3 --> C4["4. Dados de treino"]
-    C4 --> C5["5. Engenharia de features"]
-    C5 --> C6["6. Desenvolvimento e avaliação offline"]
-    C6 --> C7["7. Deploy e predição"]
-    C7 --> C8["8. Mudanças de distribuição e monitoramento"]
-    C8 --> C9["9. Aprendizado contínuo e testes em produção"]
-    C9 --> C10["10. Infraestrutura e ferramentas"]
-    C10 --> C11["11. O lado humano"]
+    C1["1 · Visão geral"] --> C2["2 · Design de sistemas de ML"]
+    C2 --> C3["3 · Engenharia de dados"]
+    C3 --> C4["4 · Dados de treino"]
+    C4 --> C5["5 · Engenharia de features"]
+    C5 --> C6["6 · Desenvolvimento e avaliação offline"]
+    C6 --> C7["7 · Deploy e predição"]
+    C7 --> C8["8 · Mudanças de distribuição e monitoramento"]
+    C8 --> C9["9 · Aprendizado contínuo e testes em produção"]
+    C9 --> C10["10 · Infraestrutura e ferramentas"]
+    C10 --> C11["11 · O lado humano"]
     C3 -. "batch e streaming" .-> C7
     C3 -. "streaming" .-> C9
     C5 -. "train-serving skew" .-> C8

@@ -69,12 +69,12 @@ Para explicar por que a estrutura é sempre deixada para depois, o livro usa a m
 ```mermaid
 flowchart TB
     subgraph Importante
-        Q1["1. Urgente e importante"]
-        Q2["2. Importante, não urgente (arquitetura)"]
+        Q1["1 · Urgente e importante"]
+        Q2["2 · Importante, não urgente (arquitetura)"]
     end
     subgraph "Não importante"
-        Q3["3. Urgente, não importante (muitas features)"]
-        Q4["4. Nem urgente nem importante"]
+        Q3["3 · Urgente, não importante (muitas features)"]
+        Q4["4 · Nem urgente nem importante"]
     end
 ```
 

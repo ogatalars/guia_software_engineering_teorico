@@ -31,22 +31,22 @@ Três partes. A Parte I é a matemática e os fundamentos de ML; a Parte II, as 
 ```mermaid
 flowchart TB
     subgraph P1["Parte I: matemática e fundamentos"]
-        C1["1. Introdução"] --> C2["2. Álgebra linear"]
-        C2 --> C3["3. Probabilidade"]
-        C3 --> C4["4. Computação numérica"]
-        C4 --> C5["5. Fundamentos de ML"]
+        C1["1 · Introdução"] --> C2["2 · Álgebra linear"]
+        C2 --> C3["3 · Probabilidade"]
+        C3 --> C4["4 · Computação numérica"]
+        C4 --> C5["5 · Fundamentos de ML"]
     end
     subgraph P2["Parte II: redes na prática"]
-        C6["6. Feedforward"] --> C7["7. Regularização"]
-        C6 --> C8["8. Otimização"]
-        C8 --> C9["9. Convolucionais"]
-        C8 --> C10["10. Recorrentes"]
-        C7 --> C11["11. Metodologia prática"]
-        C9 --> C12["12. Aplicações"]
+        C6["6 · Feedforward"] --> C7["7 · Regularização"]
+        C6 --> C8["8 · Otimização"]
+        C8 --> C9["9 · Convolucionais"]
+        C8 --> C10["10 · Recorrentes"]
+        C7 --> C11["11 · Metodologia prática"]
+        C9 --> C12["12 · Aplicações"]
         C10 --> C12
     end
     subgraph P3["Parte III: pesquisa"]
-        C13["13 a 19. Fatores lineares, autoencoders, modelos probabilísticos, inferência"] --> C20["20. Modelos generativos"]
+        C13["13 a 19. Fatores lineares, autoencoders, modelos probabilísticos, inferência"] --> C20["20 · Modelos generativos"]
     end
     C5 --> C6
     C8 --> C13
