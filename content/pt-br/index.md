@@ -7,7 +7,7 @@ tags: [inicio]
 # Guia Teórico de Software Engineering
 
 > [!IMPORTANT] Comece por aqui
-> **[Fundamentos de Software Engineering](fundamentos/index.md)** é um percurso único em 11 módulos, do código bem organizado até machine learning em produção. Foi escrito para ser lido do começo ao fim, sem precisar de nenhum livro.
+> **[Fundamentos de Software Engineering](fundamentos/index.md)** é um percurso único em 15 módulos, do código bem organizado até machine learning em produção e avaliação de features com IA. Foi escrito para ser lido do começo ao fim, sem precisar de nenhum livro.
 
 ## Para quem é
 
@@ -21,7 +21,7 @@ flowchart LR
   L --> S["Fontes públicas verificadas"]
 ```
 
-**1. [Fundamentos de Software Engineering](fundamentos/index.md).** O guia principal. Onze módulos em três partes: código e arquitetura, dados e escala, inteligência artificial. Cada módulo se sustenta sozinho e termina indicando onde aprofundar.
+**1. [Fundamentos de Software Engineering](fundamentos/index.md).** O guia principal. Quinze módulos em quatro partes: código e arquitetura, dados e escala, inteligência artificial, e garantir que funciona (testes, entrega, operação e evals). Cada módulo se sustenta sozinho e termina indicando onde aprofundar.
 
 **2. Guias por livro.** Para quem quer ir além de um módulo, há um guia de leitura de cada livro, com o essencial de cada capítulo explicado sem jargão. Nenhum é obrigatório.
 

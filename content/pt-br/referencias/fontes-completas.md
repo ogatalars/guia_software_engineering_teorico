@@ -1,6 +1,6 @@
 ---
 title: "Todas as fontes públicas"
-description: "Levantamento completo dos 40 links verificados que sustentam este guia, organizados por área e por livro, com a lista do que foi descartado e por quê."
+description: "Levantamento completo dos links verificados que sustentam este guia, organizados por área, por livro e por prática de engenharia, com a lista do que foi descartado e por quê."
 tags: [fontes, referencias]
 ---
 
@@ -75,6 +75,35 @@ Descartados: preslavmihaylov/booknotes e n3m/tldr-software-architecture (404); f
 | Designing ML Systems (Chip Huyen) | Guia de estudo / curso de origem | MLOps guide (huyenchip.com/mlops) e CS 329S Syllabus (Stanford) | https://huyenchip.com/mlops/ e https://stanford-cs329s.github.io/syllabus.html | O guia MLOps é a trilha de estudo da autora (fundamentos → MLOps → carreira → 9 estudos de caso). O syllabus lista aula a aula com links para notas e slides; é índice, use-o para achar as notas de aula. |
 
 ---
+
+## 4. Práticas de engenharia: testes, entrega, operação e evals — adicionado em 06/11/2026
+
+Estas são as fontes dos módulos 12 a 15 dos [Fundamentos](../fundamentos/index.md), que não se apoiam em nenhum dos sete livros-base. Todos os links abaixo são gratuitos e abertos, sem cadastro; cada URL foi aberta para confirmar que responde.
+
+| Tema | Tipo de Material | Título da Página | URL | Resumo do que há no link |
+|---|---|---|---|---|
+| Testes | Artigo de referência | The Practical Test Pyramid (Ham Vocke, martinfowler.com) | https://martinfowler.com/articles/practical-test-pyramid.html | Texto longo que define as camadas da pirâmide com exemplos de código em cada uma (unidade, integração, contrato, UI, ponta a ponta), discute o que dublar e critica o uso cego da imagem da pirâmide. |
+| Testes | Verbete | Test Double (martinfowler.com) | https://martinfowler.com/bliki/TestDouble.html | Define os cinco tipos de dublê no vocabulário de Gerard Meszaros — dummy, fake, stub, spy, mock — em uma página curta. Base do vocabulário usado no módulo 12. |
+| Testes | Verbete | Unit Test (martinfowler.com) | https://martinfowler.com/bliki/UnitTest.html | Por que "unidade" significa coisas diferentes para times diferentes, e as duas escolas (solitária e sociável). Útil para encerrar a discussão "isso é unidade ou integração?". |
+| Testes | Verbete | Test-Driven Development (martinfowler.com) | https://martinfowler.com/bliki/TestDrivenDevelopment.html | O ciclo vermelho-verde-refatorar descrito em poucos parágrafos, com a distinção entre TDD como técnica de design e TDD como regra. |
+| Testes | Livro gratuito em HTML | Software Engineering at Google, caps. 11–14 | https://abseil.io/resources/swe-book | "Testing Overview", "Unit Testing", "Test Doubles" e "Larger Testing": a visão por tamanho de teste (pequeno/médio/grande), o custo de testes frágeis e dublês em escala de monorepo. |
+| Testes | Blog oficial | Google Testing Blog | https://testing.googleblog.com/ | Posts curtos (a série "Testing on the Toilet") sobre um problema de teste por vez: nomeação, dublês demais, testes frágeis, flakiness. |
+| Entrega | Artigo de referência | Continuous Integration (martinfowler.com) | https://martinfowler.com/articles/continuousIntegration.html | O artigo que definiu a prática: por que a frequência de integração é o ponto, o que é "tronco sempre verde" e as práticas que sustentam isso. |
+| Entrega | Artigo de referência | Feature Toggles (Pete Hodgson, martinfowler.com) | https://martinfowler.com/articles/feature-toggles.html | Taxonomia das flags (release, experimento, operação, permissão), ciclo de vida de cada tipo, como implementar e como evitar a dívida de flags eternas. |
+| Entrega | Verbetes | Canary Release e Blue-Green Deployment (martinfowler.com) | https://martinfowler.com/bliki/CanaryRelease.html (e https://martinfowler.com/bliki/BlueGreenDeployment.html) | As duas estratégias de liberação em uma página cada, com os pré-requisitos de infraestrutura e os cuidados com estado e banco. |
+| Entrega | Site de referência | Trunk Based Development | https://trunkbaseddevelopment.com/ | O modelo de branches explicado em detalhe, com variações por tamanho de time, relação com feature flags e uma seção honesta sobre quando ele não serve. |
+| Entrega | Guia oficial | Google Engineering Practices: Code Review | https://google.github.io/eng-practices/review/ | O guia público do Google, separado em padrão do revisor e guia do autor. Origem do critério "aprove o que melhora a saúde do sistema, não o que ficou perfeito". |
+| Entrega | Programa de pesquisa | DORA | https://dora.dev/ | As quatro medidas de entrega (frequência, lead time, taxa de falha, tempo de restauração), os relatórios anuais e um questionário de autoavaliação. |
+| Entrega | Manifesto curto | The Twelve-Factor App | https://12factor.net/ | Doze regras sobre configuração, separação build/release/run, processos sem estado e paridade entre ambientes. Curto e ainda aplicável. |
+| Operação | Livro gratuito em HTML | Site Reliability Engineering (Google) | https://sre.google/sre-book/table-of-contents/ | O livro inteiro, por capítulo. Os mais diretos para quem começa: SLOs (https://sre.google/sre-book/service-level-objectives/), monitoramento de sistemas distribuídos (https://sre.google/sre-book/monitoring-distributed-systems/) e cultura de postmortem (https://sre.google/sre-book/postmortem-culture/). |
+| Operação | Livro gratuito em HTML | The Site Reliability Workbook (Google) | https://sre.google/workbook/table-of-contents/ | A parte prática do anterior. O capítulo de alerta baseado em SLO (https://sre.google/workbook/alerting-on-slos/) traz as fórmulas de burn rate com exemplos numéricos. |
+| Operação | Documentação oficial | OpenTelemetry | https://opentelemetry.io/docs/what-is-opentelemetry/ (sinais: https://opentelemetry.io/docs/concepts/signals/) | O padrão aberto (CNCF) para instrumentar logs, métricas e traces sem depender de fornecedor, com a definição de span, contexto e propagação. |
+| Operação | Documentação oficial | Prometheus — Alerting best practices | https://prometheus.io/docs/practices/alerting/ | Página curta e direta sobre alertar em sintoma e não em causa, quantidade de alertas e o que deve ser página versus ticket. |
+| Operação | Manifesto | Principles of Chaos Engineering | https://principlesofchaos.org/ | Define a prática de injetar falha de propósito com método: hipótese sobre o estado estável, experimentos em produção, raio de explosão controlado. |
+| Evals | Artigo de referência | Your AI Product Needs Evals (Hamel Husain) | https://hamel.dev/blog/posts/evals/ | O texto mais prático sobre montar o ciclo de eval de um produto com LLM: níveis de avaliação, como calibrar um juiz contra gente e por que olhar os dados é a parte que ninguém faz. |
+| Evals | Documentação oficial | Criar avaliações empíricas (Anthropic) | https://docs.claude.com/en/docs/test-and-evaluate/develop-tests | Como desenhar casos e graders, com exemplos de rubrica e de avaliação por código, por modelo e por pessoa. |
+| Evals | Documentação oficial + ferramenta | Guia de evals da OpenAI e repositório openai/evals | https://platform.openai.com/docs/guides/evals (repo: https://github.com/openai/evals) | O formato de dataset e a ferramenta mais difundidos, com exemplos de graders prontos. |
+| Evals | Artigo científico | Evaluating Large Language Models Trained on Code | https://arxiv.org/abs/2107.03374 | O artigo que popularizou a métrica pass@k, com a definição formal e o estimador sem viés. Fonte primária da seção sobre aleatoriedade do módulo 15. |
 
 ## Descartados (e por quê)
 

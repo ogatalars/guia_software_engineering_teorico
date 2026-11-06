@@ -295,11 +295,11 @@ Práticas que viram rotina de engenharia, não filosofia:
 - [O lado humano de ML](../ia/designing-ml-systems/11-o-lado-humano-de-ml.md): experiência do usuário, times e IA responsável.
 - O livro original: *Designing Machine Learning Systems*, de Chip Huyen (O'Reilly, 2022).
 
-## E agora?
+## Fechando a Parte 3
 
-Você começou este guia com o código do carrinho da Lojinha e terminou com um sistema que aprende com os clientes. No caminho, a mesma ideia voltou com roupas diferentes: **separar o que muda do que não muda**. No código, isso eram fronteiras e dependências. Nos dados, era separar a fonte da verdade do que é derivado dela. Na escala, era aceitar que máquinas e redes falham e desenhar em volta disso. Em ML, é tratar o modelo como uma peça substituível dentro de um sistema que precisa sobreviver a ele.
+Você começou este guia com o código do carrinho da Lojinha e chegou a um sistema que aprende com os clientes. No caminho, a mesma ideia voltou com roupas diferentes: **separar o que muda do que não muda**. No código, isso eram fronteiras e dependências. Nos dados, era separar a fonte da verdade do que é derivado dela. Na escala, era aceitar que máquinas e redes falham e desenhar em volta disso. Em ML, é tratar o modelo como uma peça substituível dentro de um sistema que precisa sobreviver a ele.
 
-Nada disso se aprende de uma vez. Volte aos módulos quando um problema real te lembrar deles: o [módulo 1](01-codigo-que-aguenta-mudanca.md) quando o código ficar difícil de mudar, o [módulo 6](06-quando-uma-maquina-nao-basta.md) quando o banco não aguentar, o [módulo 9](09-projetando-sistemas-na-pratica.md) quando alguém pedir "um sistema que faz X". E quando um assunto te prender, os [guias por livro](index.md#os-livros-por-trás-do-guia) estão lá para levar você mais fundo.
+Falta a parte que atravessa tudo isso: como você sabe que o que construiu funciona, como o código chega ao usuário sem virar um evento de risco, como descobrir o que o sistema está fazendo em produção e como avaliar uma feature que não responde sempre igual. É a [Parte 4](index.md), a partir do [módulo 12](12-testes-automatizados.md).
 
 ---
-Anterior: [10. Como uma máquina aprende](10-como-uma-maquina-aprende.md) · Voltar ao [início do guia](index.md)
+Anterior: [10. Como uma máquina aprende](10-como-uma-maquina-aprende.md) · Próximo: [12. Testes automatizados](12-testes-automatizados.md) · Voltar ao [início do guia](index.md)
