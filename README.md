@@ -15,7 +15,7 @@ Cobre sete livros-base em três áreas:
 
 ## Status
 
-Completo em português: o guia principal [Fundamentos de Software Engineering](content/pt-br/fundamentos/index.md), em 11 módulos, e os guias de leitura dos sete livros. Em andamento: versão em inglês.
+Completo em português: o guia principal [Fundamentos de Software Engineering](content/pt-br/fundamentos/index.md), em 15 módulos, e os guias de leitura dos sete livros. Em andamento: versão em inglês.
 
 ## Licença
 

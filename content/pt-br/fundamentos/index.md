@@ -1,6 +1,6 @@
 ---
 title: "Fundamentos de Software Engineering — comece por aqui"
-description: "Um guia único, em 11 módulos, que leva do código bem organizado até sistemas distribuídos e machine learning em produção. Cada módulo se sustenta sozinho; os livros entram só como indicação para quem quiser ir mais fundo."
+description: "Um guia único, em 15 módulos, que leva do código bem organizado até sistemas distribuídos, machine learning em produção e a avaliação de features com IA. Cada módulo se sustenta sozinho; os livros entram só como indicação para quem quiser ir mais fundo."
 tags: [fundamentos, inicio]
 ---
 
@@ -17,7 +17,7 @@ Você não precisa ter lido nenhum livro. Cada termo técnico é explicado na pr
 
 ## Como este guia funciona
 
-São 11 módulos, numa ordem pensada para que cada um use o que veio antes. Cada módulo explica as ideias de verdade, com exemplos e diagramas, e fecha com perguntas para você conferir se entendeu.
+São 15 módulos, numa ordem pensada para que cada um use o que veio antes. Cada módulo explica as ideias de verdade, com exemplos e diagramas, e fecha com perguntas para você conferir se entendeu.
 
 No fim de cada módulo há uma seção **"Quer ir mais fundo?"**. Ela aponta para os guias por livro deste site e para o livro original. **Nada ali é obrigatório.** O módulo foi escrito para se bastar; os livros são para quando um assunto te prender e você quiser os detalhes.
 
@@ -39,9 +39,14 @@ flowchart TD
   subgraph I["Parte 3 · IA"]
     M10["10 · Como uma máquina aprende"] --> M11["11 · ML em produção"]
   end
+  subgraph G["Parte 4 · Garantir que funciona"]
+    M12["12 · Testes automatizados"] --> M13["13 · Entrega e colaboração"]
+    M13 --> M14["14 · Observabilidade e operação"]
+    M14 --> M15["15 · Evals: testando sistemas com IA"]
+  end
 ```
 
-A ordem não é a única possível. Se você trabalha com dados, pode começar pela Parte 2. Se o seu interesse é IA, a Parte 3 funciona sozinha, mas o módulo 11 fica mais claro depois dos módulos 5 a 8.
+A ordem não é a única possível. Se você trabalha com dados, pode começar pela Parte 2. Se o seu interesse é IA, a Parte 3 funciona sozinha, mas o módulo 11 fica mais claro depois dos módulos 5 a 8. A Parte 4 trata de como garantir que o que você construiu funciona e continua funcionando; ela pode ser lida logo depois da Parte 1, e o módulo 12 em especial é útil desde o primeiro dia.
 
 ## Os módulos
 
@@ -65,6 +70,13 @@ A ordem não é a única possível. Se você trabalha com dados, pode começar p
 10. **[Como uma máquina aprende](10-como-uma-maquina-aprende.md)** — o que é treinar um modelo, como uma rede neural funciona por dentro e o que mudou desde os Transformers.
 11. **[ML em produção](11-ml-em-producao.md)** — dados, features, deploy e monitoramento: tudo o que um modelo precisa para funcionar fora do notebook.
 
+### Parte 4 · Garantir que funciona
+
+12. **[Testes automatizados](12-testes-automatizados.md)** — a pirâmide de testes, dublês, TDD e por que cobertura é termômetro e não meta.
+13. **[Entrega e colaboração](13-entrega-e-colaboracao.md)** — tamanho de lote, integração contínua, code review, feature flags, canário e rollback.
+14. **[Observabilidade e operação](14-observabilidade-e-operacao.md)** — logs, métricas e traces, percentis, SLO e orçamento de erro, alertas e postmortem.
+15. **[Evals: testando sistemas com IA](15-evals-testando-sistemas-com-ia.md)** — como testar o que não responde sempre igual, quem dá a nota e as armadilhas mais comuns.
+
 ## Os livros por trás do guia
 
 Este guia se apoia em sete livros. Para cada um existe um guia de leitura com resumo por capítulo, caso você queira ir além do módulo:
@@ -78,6 +90,8 @@ Este guia se apoia em sete livros. Para cada um existe um guia de leitura com re
 | System Design Interview (Alex Xu) | 9 | [Guia do livro](../system-design/system-design-interview/index.md) |
 | Deep Learning (Goodfellow, Bengio, Courville) | 10 | [Guia do livro](../ia/deep-learning/index.md) |
 | Designing Machine Learning Systems (Chip Huyen) | 11 | [Guia do livro](../ia/designing-ml-systems/index.md) |
+
+Os módulos 12 a 15 não têm um livro-base no site. As fontes deles são públicas e gratuitas (o livro de SRE do Google, os artigos de Martin Fowler, a documentação do OpenTelemetry, entre outras) e estão listadas no fim de cada módulo e em [todas as fontes públicas](../referencias/fontes-completas.md).
 
 ---
 Próximo: [1. Código que aguenta mudança](01-codigo-que-aguenta-mudanca.md) · Voltar ao [início do site](../index.md)

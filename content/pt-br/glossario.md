@@ -44,6 +44,10 @@ Cópia de um dado guardada em um lugar mais rápido de acessar do que a origem, 
 
 Agrupamento horizontal de código por responsabilidade técnica: interface, aplicação, domínio, infraestrutura. Em arquiteturas em camadas a regra é que cada camada só conhece a de baixo; na Clean Architecture a regra vira "só conhece a de dentro". Aprofunda em Clean Architecture, Parte V, e DDD, capítulo 4.
 
+## Canário (liberação canário)
+
+Estratégia de liberação em que a versão nova recebe primeiro uma fatia pequena do tráfego, sob observação, e só é ampliada se as métricas continuarem boas. O nome vem do canário que mineiros levavam para dentro da mina. O ponto é que um erro atinge 1% dos usuários, não todos. Aprofunda no [módulo 13](fundamentos/13-entrega-e-colaboracao.md).
+
 ## CAP
 
 Teorema que diz que, quando a rede particiona (nós deixam de se falar), um sistema distribuído precisa escolher entre continuar respondendo (disponibilidade) e continuar respondendo certo (consistência). É menos útil do que parece: partições são raras, e as escolhas interessantes acontecem fora delas. Aprofunda em DDIA, capítulo 9.
@@ -51,6 +55,10 @@ Teorema que diz que, quando a rede particiona (nós deixam de se falar), um sist
 ## Caso de uso
 
 Na Clean Architecture, uma operação do sistema descrita do ponto de vista de quem a usa ("fazer pedido", "cancelar assinatura"), implementada sem depender de interface, banco ou framework. É a camada que orquestra as entidades. Aprofunda em Clean Architecture, Parte V.
+
+## Cobertura de testes
+
+Porcentagem do código que foi executada quando a suíte de testes rodou. Serve para achar partes que nenhum teste encosta; não serve para dizer se o que foi testado está bem testado, porque mede execução e não verificação. Vira um problema no instante em que vira meta. Aprofunda no [módulo 12](fundamentos/12-testes-automatizados.md).
 
 ## Consistência (forte e eventual)
 
@@ -72,6 +80,14 @@ Quando o módulo A importa, chama ou conhece o módulo B, A depende de B: mudan�
 
 Fração do tempo em que o sistema responde corretamente, em geral expressa em "noves": 99,9% significa cerca de 8h45 fora do ar por ano. Cada nove a mais custa muito mais do que o anterior. Aprofunda em DDIA, capítulo 1, e System Design Interview, capítulo 2.
 
+## Dublê de teste (test double)
+
+Peça que substitui, dentro de um teste, algo que você não quer executar de verdade: o gateway de pagamento, o relógio, uma API de terceiro. Os tipos têm nomes próprios — dummy, stub, fake, spy e mock —, e a regra prática é dublar só o que você não controla, nunca a sua própria lógica de negócio. Aprofunda no [módulo 12](fundamentos/12-testes-automatizados.md).
+
+## Eval
+
+Teste automatizado do comportamento de um sistema que usa IA: um conjunto de casos, uma forma de dar nota a cada saída e um número que diz se a versão nova está melhor ou pior que a anterior. Como a saída varia entre execuções, o resultado é uma taxa, não verde ou vermelho. Aprofunda no [módulo 15](fundamentos/15-evals-testando-sistemas-com-ia.md).
+
 ## Entidade
 
 Objeto do domínio que tem identidade própria ao longo do tempo: dois clientes com o mesmo nome continuam sendo dois clientes. Contrasta com value object. Aprofunda em DDD, capítulo 5, e Clean Architecture, Parte V.
@@ -80,6 +96,10 @@ Objeto do domínio que tem identidade própria ao longo do tempo: dois clientes 
 
 Em ML, uma variável de entrada do modelo, derivada dos dados brutos: idade, número de compras nos últimos 30 dias, comprimento do texto. Engenharia de features é transformar dados brutos em entradas que o modelo consegue usar bem. Aprofunda em Designing ML Systems, capítulo 5.
 
+## Feature flag
+
+Um `if` cujo valor vem de fora do código, usado para separar deploy (o código está nos servidores) de release (o usuário vê o comportamento novo). Permite integrar trabalho inacabado no tronco todo dia e desligar uma feature em segundos, sem deploy. Toda flag de lançamento é dívida e nasce com prazo de remoção. Aprofunda no [módulo 13](fundamentos/13-entrega-e-colaboracao.md).
+
 ## Fila e mensageria
 
 Componente que recebe mensagens de quem produz e as entrega a quem consome, desacoplando os dois no tempo: o produtor não espera o consumidor. Permite absorver picos e tolerar consumidores fora do ar. Kafka, RabbitMQ e SQS são exemplos com garantias diferentes. Aprofunda em DDIA, capítulo 11, e System Design Interview, capítulo 10.
@@ -87,6 +107,10 @@ Componente que recebe mensagens de quem produz e as entrega a quem consome, desa
 ## Fronteira arquitetural
 
 Linha que separa partes do sistema que mudam por motivos diferentes ou em ritmos diferentes, de modo que uma mudança de um lado não force mudança do outro. Atravessar a fronteira custa (interfaces, conversão de dados), então ela só vale onde a separação paga esse custo. Aprofunda em Clean Architecture, Parte V.
+
+## Integração contínua, entrega contínua e deploy contínuo
+
+Três degraus diferentes, muito confundidos. Integração contínua: todo mundo junta o próprio trabalho ao tronco pelo menos uma vez por dia, com verificação automática. Entrega contínua: todo commit no tronco gera um artefato pronto para produção, e a decisão de subir é humana. Deploy contínuo: o que passa vai sozinho para produção. Aprofunda no [módulo 13](fundamentos/13-entrega-e-colaboracao.md).
 
 ## Gradiente e descida do gradiente
 
@@ -108,6 +132,10 @@ Latência é quanto tempo uma requisição leva do pedido à resposta. Throughpu
 
 No DDD, o vocabulário compartilhado entre desenvolvedores e especialistas do negócio, usado igual na conversa, nos diagramas e no código. Se o negócio diz "apólice" e o código diz "contrato", alguém vai traduzir errado em algum momento. Aprofunda em DDD, capítulo 2.
 
+## LLM como juiz
+
+Usar um modelo de linguagem, guiado por uma rubrica escrita, para dar nota à saída de outro — o jeito de avaliar o que código não consegue checar, como tom, fidelidade ao documento ou se a resposta respondeu à pergunta. O juiz também erra e precisa ser calibrado contra avaliação humana antes de valer como decisão. Aprofunda no [módulo 15](fundamentos/15-evals-testando-sistemas-com-ia.md).
+
 ## Loss (função de perda)
 
 Número que mede quão errado o modelo está em um exemplo ou lote; treinar é minimizar esse número. A escolha da loss define o que o modelo está de fato otimizando, que nem sempre é o que você queria. Aprofunda em Deep Learning, capítulos 5 e 6.
@@ -118,7 +146,11 @@ Representação, em código e em diagramas, dos conceitos e regras do negócio q
 
 ## Observabilidade
 
-Capacidade de entender o que está acontecendo dentro de um sistema a partir do que ele emite: logs, métricas e traces. Difere de monitoramento, que checa perguntas pré-definidas; observabilidade permite fazer perguntas novas. Aprofunda em Designing ML Systems, capítulo 8, e Fundamentals of Software Architecture (características arquiteturais).
+Capacidade de entender o que está acontecendo dentro de um sistema a partir do que ele emite: logs, métricas e traces. Difere de monitoramento, que checa perguntas pré-definidas; observabilidade permite fazer perguntas novas, sem precisar alterar o sistema e subir de novo. Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md), em Designing ML Systems, capítulo 8, e em Fundamentals of Software Architecture (características arquiteturais).
+
+## Orçamento de erro (error budget)
+
+A quantidade de falha que um SLO permite num período: um SLO de 99,9% em 30 dias dá cerca de 43 minutos. Serve para transformar a discussão entre "entregar mais rápido" e "ser mais estável" numa regra combinada — orçamento sobrando autoriza risco, orçamento estourado prioriza confiabilidade. Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md).
 
 ## Overfitting
 
@@ -126,7 +158,11 @@ Quando um modelo aprende os detalhes e o ruído dos dados de treino em vez do pa
 
 ## p50, p99 (percentis de latência)
 
-p99 de 300 ms significa que 99% das requisições respondem em até 300 ms e 1% demora mais. Médias escondem exatamente os usuários que estão sofrendo; percentis altos mostram. Aprofunda em DDIA, capítulo 1.
+p99 de 300 ms significa que 99% das requisições respondem em até 300 ms e 1% demora mais. Médias escondem exatamente os usuários que estão sofrendo; percentis altos mostram. Não se tira média de percentis: eles se calculam sobre a distribuição inteira. Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md) e em DDIA, capítulo 1.
+
+## pass@k e pass^k
+
+Duas formas de medir um sistema cuja saída varia entre execuções. pass@k é a chance de pelo menos uma de k tentativas dar certo (serve quando dá para tentar de novo); pass^k é a chance de todas as k darem certo (serve quando o usuário espera o mesmo resultado sempre). Com a mesma taxa por tentativa, as duas andam em direções opostas conforme k cresce. Aprofunda no [módulo 15](fundamentos/15-evals-testando-sistemas-com-ia.md).
 
 ## Particionamento (sharding)
 
@@ -136,17 +172,37 @@ Dividir um conjunto de dados grande em pedaços menores, cada um em uma máquina
 
 Sequência de etapas em que a saída de uma é a entrada da próxima: ingestão, limpeza, transformação, treino, avaliação. Em dados e em ML, quase tudo é pipeline, e a maioria dos problemas em produção está nas emendas entre etapas. Aprofunda em DDIA, capítulo 10, e Designing ML Systems, capítulos 3 e 10.
 
+## Pirâmide de testes
+
+Imagem que organiza o trade-off entre confiança e custo nos testes: muitos testes de unidade (rápidos, isolados, diagnóstico preciso), alguns de integração (com banco e serviços reais) e poucos de ponta a ponta (convincentes, lentos e frágeis). A regra prática é escrever o teste no nível mais baixo capaz de pegar o erro que preocupa. Aprofunda no [módulo 12](fundamentos/12-testes-automatizados.md).
+
 ## Replicação
 
 Manter cópias do mesmo dado em várias máquinas, para tolerar falhas e servir leituras mais perto do usuário. A dificuldade toda é manter as cópias de acordo quando há escritas: líder único, múltiplos líderes ou sem líder são as três famílias de solução. Aprofunda em DDIA, capítulo 5.
 
 ## SLO
 
-Service Level Objective: a meta numérica de confiabilidade que um serviço promete, como "99,9% das requisições em menos de 500 ms no mês". Define o que é "bom o suficiente" e, por consequência, quanto risco a equipe pode assumir. Aprofunda em Fundamentals of Software Architecture (características arquiteturais) e Designing ML Systems, capítulo 7.
+Service Level Objective: a meta numérica de confiabilidade que um serviço promete, como "99,9% das requisições em menos de 500 ms no mês". Define o que é "bom o suficiente" e, por consequência, quanto risco a equipe pode assumir. Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md), em Fundamentals of Software Architecture (características arquiteturais) e em Designing ML Systems, capítulo 7.
+
+## SLI
+
+Service Level Indicator: a medida concreta sobre a qual um SLO é definido, com todos os detalhes fechados — qual rota, o que conta como sucesso, qual limite de tempo. "Porcentagem de requisições de checkout respondidas com sucesso em menos de 1 segundo" é um SLI; "99,9% ao mês" é o SLO sobre ele. Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md).
 
 ## Stateless e stateful
 
 Um componente stateless não guarda nada entre requisições; qualquer instância pode atender qualquer pedido, o que facilita escalar e substituir. Um componente stateful guarda estado (sessão, dados), e por isso é mais difícil de replicar e mover. A estratégia comum é empurrar o estado para onde ele é bem cuidado (banco, cache) e deixar o resto stateless. Aprofunda em System Design Interview, capítulo 1.
+
+## TDD (desenvolvimento guiado por testes)
+
+Prática em que o teste vem antes do código, em ciclos curtos de vermelho (escreva um teste que falha), verde (o mínimo que o faça passar) e refatorar. Ajuda a projetar a interface pela ótica de quem a usa e garante que o teste foi visto falhar. Não é consenso nem obrigatório: funciona bem para lógica com entrada e saída claras e mal quando você ainda está explorando. Aprofunda no [módulo 12](fundamentos/12-testes-automatizados.md).
+
+## Teste intermitente (flaky)
+
+Teste que passa e falha sem que nada mude no código. É pior do que não ter teste, porque destrói a confiança de que vermelho significa problema — depois do terceiro "roda de novo que passa", o time ignora também os vermelhos reais. Conserta-se ou tira-se da suíte. Aprofunda no [módulo 12](fundamentos/12-testes-automatizados.md).
+
+## Trace (rastro distribuído)
+
+O registro da viagem de uma requisição pelo sistema inteiro, etapa por etapa, cada uma com início, fim e atributos (um span), todas ligadas pelo mesmo identificador de correlação. É o sinal que transforma "o checkout está lento" em "o checkout está lento nesta chamada específica". Aprofunda no [módulo 14](fundamentos/14-observabilidade-e-operacao.md).
 
 ## Train-serving skew
 
